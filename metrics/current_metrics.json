@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-02-09T10:52:44.635221",
+  "queue_depth": {
+    "current": 0,
+    "mean": 0.0,
+    "max": 0
+  },
+  "batch_size": {
+    "current": 1.0,
+    "mean": 0.7291666666666666,
+    "min": 0.0
+  },
+  "temperature": 0.8,
+  "latency_stats": {
+    "mean": 96618188.97605366,
+    "p50": 0.0,
+    "p95": 260873999.36158466,
+    "p99": 1443470768.297496,
+    "min": 0.0,
+    "max": 1739119960.531477
+  },
+  "confidence_stats": {
+    "mean": 96617858.87723929,
+    "median": 91.62938743829727,
+    "std": 398365273.8482248,
+    "min": 0.0,
+    "max": 1739119960.531532,
+    "low_confidence_count": 9,
+    "low_confidence_mean": 0.0
+  }
+}

@@ -1,0 +1,660 @@
+{
+  "temperature_scaling": {
+    "0.8": [
+      {
+        "category": "neutral",
+        "subcategory": "factual",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9953498840332031,
+        "latency_ms": 51.33962631225586
+      },
+      {
+        "category": "neutral",
+        "subcategory": "descriptive",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.989113450050354,
+        "latency_ms": 13.335227966308594
+      },
+      {
+        "category": "borderline",
+        "subcategory": "mild_negative",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9896643757820129,
+        "latency_ms": 11.928081512451172
+      },
+      {
+        "category": "borderline",
+        "subcategory": "mild_positive",
+        "expected": "positive",
+        "predicted": "positive",
+        "confidence": 0.9999734163284302,
+        "latency_ms": 11.976957321166992
+      },
+      {
+        "category": "long_form",
+        "subcategory": "mixed_detailed",
+        "expected": "positive",
+        "predicted": "positive",
+        "confidence": 0.9995637536048889,
+        "latency_ms": 12.290000915527344
+      },
+      {
+        "category": "sarcasm",
+        "subcategory": "obvious",
+        "expected": "negative",
+        "predicted": "positive",
+        "confidence": 0.9999752044677734,
+        "latency_ms": 12.04991340637207
+      },
+      {
+        "category": "sarcasm",
+        "subcategory": "subtle",
+        "expected": "negative",
+        "predicted": "positive",
+        "confidence": 0.9997765421867371,
+        "latency_ms": 12.080192565917969
+      },
+      {
+        "category": "subjective",
+        "subcategory": "art_critique",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9999855756759644,
+        "latency_ms": 12.173175811767578
+      },
+      {
+        "category": "subjective",
+        "subcategory": "abstract",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9999834299087524,
+        "latency_ms": 12.396097183227539
+      },
+      {
+        "category": "complex",
+        "subcategory": "balanced",
+        "expected": "mixed",
+        "predicted": "negative",
+        "confidence": 0.9976357221603394,
+        "latency_ms": 16.583919525146484
+      },
+      {
+        "category": "complex",
+        "subcategory": "qualified",
+        "expected": "mixed",
+        "predicted": "positive",
+        "confidence": 0.9982859492301941,
+        "latency_ms": 12.598037719726562
+      },
+      {
+        "category": "technical",
+        "subcategory": "metrics",
+        "expected": "negative",
+        "predicted": "negative",
+        "confidence": 0.9283114075660706,
+        "latency_ms": 12.686014175415039
+      },
+      {
+        "category": "technical",
+        "subcategory": "performance",
+        "expected": "neutral",
+        "predicted": "negative",
+        "confidence": 0.998711347579956,
+        "latency_ms": 13.518095016479492
+      }
+    ],
+    "1.0": [
+      {
+        "category": "neutral",
+        "subcategory": "factual",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9865199327468872,
+        "latency_ms": 13.625860214233398
+      },
+      {
+        "category": "neutral",
+        "subcategory": "descriptive",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9735944867134094,
+        "latency_ms": 12.275934219360352
+      },
+      {
+        "category": "borderline",
+        "subcategory": "mild_negative",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9746528267860413,
+        "latency_ms": 15.130996704101562
+      },
+      {
+        "category": "borderline",
+        "subcategory": "mild_positive",
+        "expected": "positive",
+        "predicted": "positive",
+        "confidence": 0.9997817873954773,
+        "latency_ms": 12.205839157104492
+      },
+      {
+        "category": "long_form",
+        "subcategory": "mixed_detailed",
+        "expected": "positive",
+        "predicted": "positive",
+        "confidence": 0.9979531764984131,
+        "latency_ms": 12.73798942565918
+      },
+      {
+        "category": "sarcasm",
+        "subcategory": "obvious",
+        "expected": "negative",
+        "predicted": "positive",
+        "confidence": 0.9997933506965637,
+        "latency_ms": 12.184858322143555
+      },
+      {
+        "category": "sarcasm",
+        "subcategory": "subtle",
+        "expected": "negative",
+        "predicted": "positive",
+        "confidence": 0.9988003969192505,
+        "latency_ms": 12.158870697021484
+      },
+      {
+        "category": "subjective",
+        "subcategory": "art_critique",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9998655319213867,
+        "latency_ms": 12.077093124389648
+      },
+      {
+        "category": "subjective",
+        "subcategory": "abstract",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9998505115509033,
+        "latency_ms": 12.181997299194336
+      },
+      {
+        "category": "complex",
+        "subcategory": "balanced",
+        "expected": "mixed",
+        "predicted": "negative",
+        "confidence": 0.9921233057975769,
+        "latency_ms": 12.068986892700195
+      },
+      {
+        "category": "complex",
+        "subcategory": "qualified",
+        "expected": "mixed",
+        "predicted": "positive",
+        "confidence": 0.9939024448394775,
+        "latency_ms": 12.167215347290039
+      },
+      {
+        "category": "technical",
+        "subcategory": "metrics",
+        "expected": "negative",
+        "predicted": "negative",
+        "confidence": 0.8858291506767273,
+        "latency_ms": 12.133121490478516
+      },
+      {
+        "category": "technical",
+        "subcategory": "performance",
+        "expected": "neutral",
+        "predicted": "negative",
+        "confidence": 0.9951419830322266,
+        "latency_ms": 12.054920196533203
+      }
+    ],
+    "1.2": [
+      {
+        "category": "neutral",
+        "subcategory": "factual",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9728135466575623,
+        "latency_ms": 13.725042343139648
+      },
+      {
+        "category": "neutral",
+        "subcategory": "descriptive",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9528527855873108,
+        "latency_ms": 12.038230895996094
+      },
+      {
+        "category": "borderline",
+        "subcategory": "mild_negative",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9544001221656799,
+        "latency_ms": 12.104034423828125
+      },
+      {
+        "category": "borderline",
+        "subcategory": "mild_positive",
+        "expected": "positive",
+        "predicted": "positive",
+        "confidence": 0.9991111159324646,
+        "latency_ms": 12.585878372192383
+      },
+      {
+        "category": "long_form",
+        "subcategory": "mixed_detailed",
+        "expected": "positive",
+        "predicted": "positive",
+        "confidence": 0.9942790269851685,
+        "latency_ms": 12.691974639892578
+      },
+      {
+        "category": "sarcasm",
+        "subcategory": "obvious",
+        "expected": "negative",
+        "predicted": "positive",
+        "confidence": 0.9991507530212402,
+        "latency_ms": 12.482881546020508
+      },
+      {
+        "category": "sarcasm",
+        "subcategory": "subtle",
+        "expected": "negative",
+        "predicted": "positive",
+        "confidence": 0.9963298439979553,
+        "latency_ms": 12.267112731933594
+      },
+      {
+        "category": "subjective",
+        "subcategory": "art_critique",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9994062185287476,
+        "latency_ms": 12.34889030456543
+      },
+      {
+        "category": "subjective",
+        "subcategory": "abstract",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9993516802787781,
+        "latency_ms": 12.30478286743164
+      },
+      {
+        "category": "complex",
+        "subcategory": "balanced",
+        "expected": "mixed",
+        "predicted": "negative",
+        "confidence": 0.9825351238250732,
+        "latency_ms": 12.614250183105469
+      },
+      {
+        "category": "complex",
+        "subcategory": "qualified",
+        "expected": "mixed",
+        "predicted": "positive",
+        "confidence": 0.985863983631134,
+        "latency_ms": 12.13383674621582
+      },
+      {
+        "category": "technical",
+        "subcategory": "metrics",
+        "expected": "negative",
+        "predicted": "negative",
+        "confidence": 0.846493124961853,
+        "latency_ms": 12.096166610717773
+      },
+      {
+        "category": "technical",
+        "subcategory": "performance",
+        "expected": "neutral",
+        "predicted": "negative",
+        "confidence": 0.9882863163948059,
+        "latency_ms": 11.97504997253418
+      }
+    ],
+    "1.5": [
+      {
+        "category": "neutral",
+        "subcategory": "factual",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9459346532821655,
+        "latency_ms": 13.377189636230469
+      },
+      {
+        "category": "neutral",
+        "subcategory": "descriptive",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9172038435935974,
+        "latency_ms": 12.122869491577148
+      },
+      {
+        "category": "borderline",
+        "subcategory": "mild_negative",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.919305145740509,
+        "latency_ms": 12.0849609375
+      },
+      {
+        "category": "borderline",
+        "subcategory": "mild_positive",
+        "expected": "positive",
+        "predicted": "positive",
+        "confidence": 0.9963877201080322,
+        "latency_ms": 11.955976486206055
+      },
+      {
+        "category": "long_form",
+        "subcategory": "mixed_detailed",
+        "expected": "positive",
+        "predicted": "positive",
+        "confidence": 0.9841139316558838,
+        "latency_ms": 12.301206588745117
+      },
+      {
+        "category": "sarcasm",
+        "subcategory": "obvious",
+        "expected": "negative",
+        "predicted": "positive",
+        "confidence": 0.9965165853500366,
+        "latency_ms": 12.06207275390625
+      },
+      {
+        "category": "sarcasm",
+        "subcategory": "subtle",
+        "expected": "negative",
+        "predicted": "positive",
+        "confidence": 0.9888275861740112,
+        "latency_ms": 12.099981307983398
+      },
+      {
+        "category": "subjective",
+        "subcategory": "art_critique",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.9973819851875305,
+        "latency_ms": 11.984825134277344
+      },
+      {
+        "category": "subjective",
+        "subcategory": "abstract",
+        "expected": "neutral",
+        "predicted": "positive",
+        "confidence": 0.997191846370697,
+        "latency_ms": 11.819124221801758
+      },
+      {
+        "category": "complex",
+        "subcategory": "balanced",
+        "expected": "mixed",
+        "predicted": "negative",
+        "confidence": 0.9617260098457336,
+        "latency_ms": 11.964082717895508
+      },
+      {
+        "category": "complex",
+        "subcategory": "qualified",
+        "expected": "mixed",
+        "predicted": "positive",
+        "confidence": 0.9675740599632263,
+        "latency_ms": 11.986017227172852
+      },
+      {
+        "category": "technical",
+        "subcategory": "metrics",
+        "expected": "negative",
+        "predicted": "negative",
+        "confidence": 0.7967146039009094,
+        "latency_ms": 11.945962905883789
+      },
+      {
+        "category": "technical",
+        "subcategory": "performance",
+        "expected": "neutral",
+        "predicted": "negative",
+        "confidence": 0.9720279574394226,
+        "latency_ms": 12.037277221679688
+      }
+    ]
+  },
+  "batch_performance": {
+    "1": {
+      "throughput": 32.63897405568611,
+      "mean_latency_ms": 11.862039566040039,
+      "p95_latency_ms": 11.862039566040039,
+      "mean_confidence": 0.9728135466575623,
+      "system_metrics": {
+        "cpu_percent": 21.6,
+        "memory_percent": 56.5,
+        "gpu_util": NaN
+      }
+    },
+    "4": {
+      "throughput": 32.80670165585965,
+      "mean_latency_ms": 22.511065006256104,
+      "p95_latency_ms": 28.518664836883545,
+      "mean_confidence": 0.9697943925857544,
+      "system_metrics": {
+        "cpu_percent": 8.0,
+        "memory_percent": 56.5,
+        "gpu_util": NaN
+      }
+    },
+    "8": {
+      "throughput": 30.733327654601194,
+      "mean_latency_ms": 34.394294023513794,
+      "p95_latency_ms": 51.94727182388306,
+      "mean_confidence": 0.9835429266095161,
+      "system_metrics": {
+        "cpu_percent": 0.0,
+        "memory_percent": 56.5,
+        "gpu_util": NaN
+      }
+    },
+    "16": {
+      "throughput": 31.439806345129746,
+      "mean_latency_ms": 50.068095326423645,
+      "p95_latency_ms": 82.72820711135864,
+      "mean_confidence": 0.9719337560236454,
+      "system_metrics": {
+        "cpu_percent": 0.0,
+        "memory_percent": 56.5,
+        "gpu_util": NaN
+      }
+    },
+    "32": {
+      "throughput": 32.16885507424224,
+      "mean_latency_ms": 46.5751513838768,
+      "p95_latency_ms": 73.07108640670776,
+      "mean_confidence": 0.9754485823214054,
+      "system_metrics": {
+        "cpu_percent": 12.85625,
+        "memory_percent": 56.5,
+        "gpu_util": NaN
+      }
+    },
+    "64": {
+      "throughput": 32.827921375528355,
+      "mean_latency_ms": 55.81451952457428,
+      "p95_latency_ms": 104.73544597625731,
+      "mean_confidence": 0.9744700295850635,
+      "system_metrics": {
+        "cpu_percent": 5.2546875,
+        "memory_percent": 56.653125,
+        "gpu_util": NaN
+      }
+    }
+  },
+  "neutral_classification": {
+    "0.7": {
+      "accuracy": 0.0,
+      "mean_confidence": 0.9778517782688141,
+      "predictions": [
+        {
+          "text": "The product arrived on time and matched the description provided.",
+          "category": "neutral",
+          "subcategory": "factual",
+          "predicted": "positive",
+          "confidence": 0.9728135466575623,
+          "correct": false
+        },
+        {
+          "text": "It has four wheels and a steering wheel.",
+          "category": "neutral",
+          "subcategory": "descriptive",
+          "predicted": "positive",
+          "confidence": 0.9528527855873108,
+          "correct": false
+        },
+        {
+          "text": "The food was okay, not great but not terrible either.",
+          "category": "borderline",
+          "subcategory": "mild_negative",
+          "predicted": "positive",
+          "confidence": 0.9544001221656799,
+          "correct": false
+        },
+        {
+          "text": "The artistic direction shows both innovation and respect for tradition.",
+          "category": "subjective",
+          "subcategory": "art_critique",
+          "predicted": "positive",
+          "confidence": 0.9994062185287476,
+          "correct": false
+        },
+        {
+          "text": "The philosophical implications of this design choice are intriguing.",
+          "category": "subjective",
+          "subcategory": "abstract",
+          "predicted": "positive",
+          "confidence": 0.9993516802787781,
+          "correct": false
+        },
+        {
+          "text": "CPU utilization remained within expected parameters during load testing.",
+          "category": "technical",
+          "subcategory": "performance",
+          "predicted": "negative",
+          "confidence": 0.9882863163948059,
+          "correct": false
+        }
+      ]
+    },
+    "0.8": {
+      "accuracy": 0.0,
+      "mean_confidence": 0.9778517782688141,
+      "predictions": [
+        {
+          "text": "The product arrived on time and matched the description provided.",
+          "category": "neutral",
+          "subcategory": "factual",
+          "predicted": "positive",
+          "confidence": 0.9728135466575623,
+          "correct": false
+        },
+        {
+          "text": "It has four wheels and a steering wheel.",
+          "category": "neutral",
+          "subcategory": "descriptive",
+          "predicted": "positive",
+          "confidence": 0.9528527855873108,
+          "correct": false
+        },
+        {
+          "text": "The food was okay, not great but not terrible either.",
+          "category": "borderline",
+          "subcategory": "mild_negative",
+          "predicted": "positive",
+          "confidence": 0.9544001221656799,
+          "correct": false
+        },
+        {
+          "text": "The artistic direction shows both innovation and respect for tradition.",
+          "category": "subjective",
+          "subcategory": "art_critique",
+          "predicted": "positive",
+          "confidence": 0.9994062185287476,
+          "correct": false
+        },
+        {
+          "text": "The philosophical implications of this design choice are intriguing.",
+          "category": "subjective",
+          "subcategory": "abstract",
+          "predicted": "positive",
+          "confidence": 0.9993516802787781,
+          "correct": false
+        },
+        {
+          "text": "CPU utilization remained within expected parameters during load testing.",
+          "category": "technical",
+          "subcategory": "performance",
+          "predicted": "negative",
+          "confidence": 0.9882863163948059,
+          "correct": false
+        }
+      ]
+    },
+    "0.9": {
+      "accuracy": 0.0,
+      "mean_confidence": 0.9778517782688141,
+      "predictions": [
+        {
+          "text": "The product arrived on time and matched the description provided.",
+          "category": "neutral",
+          "subcategory": "factual",
+          "predicted": "positive",
+          "confidence": 0.9728135466575623,
+          "correct": false
+        },
+        {
+          "text": "It has four wheels and a steering wheel.",
+          "category": "neutral",
+          "subcategory": "descriptive",
+          "predicted": "positive",
+          "confidence": 0.9528527855873108,
+          "correct": false
+        },
+        {
+          "text": "The food was okay, not great but not terrible either.",
+          "category": "borderline",
+          "subcategory": "mild_negative",
+          "predicted": "positive",
+          "confidence": 0.9544001221656799,
+          "correct": false
+        },
+        {
+          "text": "The artistic direction shows both innovation and respect for tradition.",
+          "category": "subjective",
+          "subcategory": "art_critique",
+          "predicted": "positive",
+          "confidence": 0.9994062185287476,
+          "correct": false
+        },
+        {
+          "text": "The philosophical implications of this design choice are intriguing.",
+          "category": "subjective",
+          "subcategory": "abstract",
+          "predicted": "positive",
+          "confidence": 0.9993516802787781,
+          "correct": false
+        },
+        {
+          "text": "CPU utilization remained within expected parameters during load testing.",
+          "category": "technical",
+          "subcategory": "performance",
+          "predicted": "negative",
+          "confidence": 0.9882863163948059,
+          "correct": false
+        }
+      ]
+    }
+  }
+}

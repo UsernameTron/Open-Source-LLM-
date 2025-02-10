@@ -1,0 +1,33 @@
+{
+  "timestamp": "2025-02-09T12:25:09.966804",
+  "overall_metrics": {
+    "avg_latency_ms": 9.261442758073834,
+    "p95_latency_ms": 12.162541698363313,
+    "avg_gpu_utilization": 0.585896961981594,
+    "avg_memory_utilization": 0.40075893249100986
+  },
+  "batch_metrics": {
+    "8": {
+      "throughput": 456805.38613861386,
+      "avg_latency_ms": 9.261442758073834,
+      "p95_latency_ms": 12.162541698363313,
+      "gpu_utilization": 0.585896961981594,
+      "memory_utilization": 0.40075893249100986,
+      "accuracy": 0.0,
+      "confidence_mean": 0.8464016950385723,
+      "confidence_std": 0.04185329198246494
+    }
+  },
+  "recommendations": [
+    {
+      "type": "gpu_utilization",
+      "severity": "medium",
+      "message": "GPU utilization below 80%. Consider increasing batch size or concurrent requests."
+    },
+    {
+      "type": "batch_size",
+      "severity": "info",
+      "message": "Optimal batch size for throughput is 8. Consider adjusting dynamic batching thresholds."
+    }
+  ]
+}

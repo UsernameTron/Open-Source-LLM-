@@ -1,0 +1,13 @@
+[
+  {
+    "gpu_utilization": 0.0,
+    "memory_utilization": 0.0,
+    "batch_latency": 0.0,
+    "queue_size": 0,
+    "throughput": 0.0,
+    "timestamp": 1739211880.3357599,
+    "cpu_util": 0.0,
+    "temperature": 0.0,
+    "power_draw": 0.0
+  }
+]

@@ -1,0 +1,24 @@
+[
+  {
+    "gpu_utilization": 0.0,
+    "memory_utilization": 0.0,
+    "batch_latency": 0.0,
+    "queue_size": 0,
+    "throughput": 0.0,
+    "timestamp": 1739214989.6342652,
+    "cpu_util": 0.0,
+    "temperature": 0.0,
+    "power_draw": 0.0
+  },
+  {
+    "gpu_utilization": 0.0,
+    "memory_utilization": 56.6,
+    "batch_latency": 0.5571842193603516,
+    "queue_size": 0,
+    "throughput": 1794.7385537013265,
+    "timestamp": 1739214991.750388,
+    "cpu_util": 26.4,
+    "temperature": 0.0,
+    "power_draw": 0.0
+  }
+]

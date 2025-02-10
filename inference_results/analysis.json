@@ -1,0 +1,49 @@
+{
+  "summary": {
+    "total_requests": 10,
+    "async_requests": 2,
+    "sync_requests": 8,
+    "mean_latency_ms": 16.67003631591797,
+    "mean_confidence": 0.9171372056007385
+  },
+  "by_type": {
+    "standard": {
+      "count": 4,
+      "mean_confidence": 0.9928332269191742,
+      "mean_latency_ms": 23.273169994354248,
+      "labels": [
+        "positive",
+        "negative",
+        "positive",
+        "negative"
+      ]
+    },
+    "mixed": {
+      "count": 2,
+      "mean_confidence": 0.7995125651359558,
+      "mean_latency_ms": 12.386441230773926,
+      "labels": [
+        "neutral",
+        "negative"
+      ]
+    },
+    "neutral": {
+      "count": 2,
+      "mean_confidence": 0.8457576334476471,
+      "mean_latency_ms": 12.217879295349121,
+      "labels": [
+        "neutral",
+        "positive"
+      ]
+    },
+    "edge": {
+      "count": 2,
+      "mean_confidence": 0.9547493755817413,
+      "mean_latency_ms": 12.1995210647583,
+      "labels": [
+        "positive",
+        "positive"
+      ]
+    }
+  }
+}
