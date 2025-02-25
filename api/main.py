@@ -26,29 +26,43 @@ from core.metrics import metrics_tracker  # Import metrics_tracker for consisten
 logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger(__name__)
 
-app = FastAPI(title="LLM Engine API")
+app = FastAPI(
+    title="LLM Engine API",
+    description="Secure LLM inference engine with advanced monitoring",
+    version="1.0.0",
+    docs_url=None if os.getenv("ENVIRONMENT") == "production" else "/docs",
+    redoc_url=None if os.getenv("ENVIRONMENT") == "production" else "/redoc"
+)
 
-# Mount static files
-app.mount("/static", StaticFiles(directory="api/static"), name="static")
+# Security middleware
+from core.security import SecurityMiddleware, verify_api_key
+app.add_middleware(SecurityMiddleware)
+
+# CORS configuration with secure defaults
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=[origin.strip() for origin in 
+                  os.getenv("ALLOWED_ORIGINS", "http://localhost:3000").split(",")],
+    allow_credentials=True,
+    allow_methods=["GET", "POST"],
+    allow_headers=["*"],
+    expose_headers=["X-Request-ID", "X-Error-Code"],
+    max_age=3600
+)
+
+# Mount static files with security headers
+app.mount("/static", 
+          StaticFiles(directory="api/static"), 
+          name="static")
 
 # Initialize templates
 templates = Jinja2Templates(directory="api/templates")
 
-class CSPMiddleware(BaseHTTPMiddleware):
-    async def dispatch(self, request: Request, call_next):
-        response = await call_next(request)
-        csp_directives = [
-            "default-src 'self'",
-            "script-src 'self' 'unsafe-eval' 'unsafe-inline' https://cdn.jsdelivr.net",
-            "style-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net",
-            "img-src 'self' data:",
-            "connect-src 'self'",
-            "font-src 'self' https://cdn.jsdelivr.net",
-            "frame-src 'self'",
-            "worker-src 'self'"
-        ]
-        response.headers['Content-Security-Policy'] = "; ".join(csp_directives)
-        return response
+# Global security dependency
+def get_auth_dependency():
+    if os.getenv("ENVIRONMENT") == "production":
+        return [Depends(verify_api_key)]
+    return []
 
 # Add CSP middleware
 app.add_middleware(CSPMiddleware)
@@ -71,9 +85,18 @@ templates = Jinja2Templates(directory="api/templates")
 # Mount static files directory
 app.mount("/static", StaticFiles(directory="api/static"), name="static")
 
-class TextInput(BaseModel):
-    text: str
+class TextInput(SecureInput):
+    """Secure text input model with validation."""
     explain: bool = False
+    max_length: int = 5000  # Maximum text length
+    
+    class Config:
+        schema_extra = {
+            "example": {
+                "text": "Sample text for analysis",
+                "explain": True
+            }
+        }
 
 class InferenceResponse(BaseModel):
     output: Dict[str, Any]
@@ -491,8 +514,9 @@ async def process_single_file(file: UploadFile, upload_options: FileUploadReques
         logger.error(f"Error processing file {file.filename}: {str(e)}")
         raise
 
-@app.post("/upload")
+@app.post("/upload", dependencies=get_auth_dependency())
 async def upload_file(
+    request: Request,
     files: List[UploadFile] = File(...),
     options: str = Form(default='{}')
 ):

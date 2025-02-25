@@ -25,7 +25,7 @@ const app = Vue.createApp({
             this.result = null;
             
             try {
-                const response = await fetch('/api/infer', {
+                const response = await fetch('/api/analyze', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json'
@@ -37,17 +37,14 @@ const app = Vue.createApp({
                 
                 if (!response.ok) {
                     const error = await response.json();
-                    throw new Error(error.detail || 'Inference failed');
+                    throw new Error(error.detail || 'Analysis failed');
                 }
-                const data = await response.json();
-                if (data.status === 'success') {
-                    this.result = data.result;
-                } else {
-                    throw new Error('Inference failed');
-                }
+                
+                this.result = await response.json();
+                
             } catch (err) {
                 this.error = err.message;
-                console.error('Inference error:', err);
+                console.error('Analysis error:', err);
             } finally {
                 this.loading = false;
             }
@@ -92,16 +89,14 @@ const app = Vue.createApp({
             }
             
             const formData = new FormData();
-            for (let file of files) {
-                formData.append('files', file);
-            }
+            formData.append('file', files[0]); // We only support single file upload for now
             
             this.loading = true;
             this.error = null;
             this.uploadStatus = 'Uploading...';
             
             try {
-                const response = await fetch('/api/upload', {
+                const response = await fetch('/api/analyze-file', {
                     method: 'POST',
                     body: formData
                 });
@@ -110,17 +105,15 @@ const app = Vue.createApp({
                     const error = await response.json();
                     throw new Error(error.detail || 'Upload failed');
                 }
-                const data = await response.json();
-                if (data.status === 'success') {
-                    this.uploadedFiles = data.processed_files;
-                    this.uploadStatus = 'Files uploaded successfully';
-                    this.selectedFiles = Array.from(files);
-                } else {
-                    throw new Error('Upload failed');
-                }
+                
+                const result = await response.json();
+                this.result = result;
+                this.uploadStatus = 'File analyzed successfully';
+                this.selectedFiles = Array.from(files);
+                
             } catch (err) {
                 this.error = err.message;
-                this.uploadStatus = 'Upload failed';
+                this.uploadStatus = 'Analysis failed';
                 console.error('Upload error:', err);
             } finally {
                 this.loading = false;

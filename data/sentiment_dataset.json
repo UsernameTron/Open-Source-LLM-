@@ -1,0 +1,57 @@
+{
+  "train": {
+    "positive": [
+      "This product is absolutely amazing! The quality is outstanding.",
+      "I love how user-friendly and efficient this software is.",
+      "The customer service team went above and beyond to help me.",
+      "This is the best purchase I've made all year!",
+      "Incredible performance and reliability. Highly recommended!",
+      "The features are exactly what I needed. Perfect solution!",
+      "Outstanding quality and value for money.",
+      "The team's responsiveness and expertise are exceptional.",
+      "This has made a huge positive impact on my workflow.",
+      "Excellent product that exceeds expectations in every way."
+    ],
+    "negative": [
+      "This product is terrible and completely unreliable.",
+      "The worst customer service experience I've ever had.",
+      "Constant crashes and bugs make this unusable.",
+      "Save your money and avoid this product.",
+      "Very disappointed with the quality and performance.",
+      "The support team was unhelpful and dismissive.",
+      "Numerous issues and no solutions provided.",
+      "Complete waste of time and resources.",
+      "The product falls short in every aspect.",
+      "Would not recommend this to anyone."
+    ],
+    "neutral": [
+      "The product works as expected, nothing special.",
+      "Average performance for the price point.",
+      "Some good features, but room for improvement.",
+      "Basic functionality meets requirements.",
+      "Decent product with standard features.",
+      "Works okay, but could be better.",
+      "Middle-of-the-road solution.",
+      "Acceptable performance for basic needs.",
+      "Neither impressive nor disappointing.",
+      "Standard product with expected features."
+    ]
+  },
+  "validation": {
+    "positive": [
+      "Great product that delivers on its promises!",
+      "Very satisfied with the performance and reliability.",
+      "The support team is fantastic and very helpful."
+    ],
+    "negative": [
+      "Poor quality and frequent technical issues.",
+      "Frustrating experience with many problems.",
+      "Not worth the price, many better alternatives."
+    ],
+    "neutral": [
+      "Does the job but nothing extraordinary.",
+      "Average product with basic features.",
+      "Functional but could use improvements."
+    ]
+  }
+}

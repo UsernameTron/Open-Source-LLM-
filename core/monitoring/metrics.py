@@ -80,21 +80,24 @@ class MetricsCollector:
 
     def _update_stats(self) -> None:
         """Update real-time statistics."""
-        if not self._request_traces:
+        if not self._request_traces and not self._batch_metrics:
             return
 
-        latencies = [trace.total_latency for trace in self._request_traces]
-        self._current_stats.update({
-            "avg_latency": np.mean(latencies),
-            "p95_latency": np.percentile(latencies, 95),
-            "p99_latency": np.percentile(latencies, 99),
-            "avg_batch_size": np.mean([trace.batch_size for trace in self._request_traces])
-        })
+        if self._request_traces:
+            latencies = [trace.total_latency for trace in self._request_traces]
+            self._current_stats.update({
+                "avg_latency": np.mean(latencies),
+                "p95_latency": np.percentile(latencies, 95),
+                "p99_latency": np.percentile(latencies, 99),
+                "avg_batch_size": np.mean([trace.batch_size for trace in self._request_traces])
+            })
 
         if self._batch_metrics:
+            # Take the most recent batch metrics for GPU and memory stats
+            latest_metrics = list(self._batch_metrics)[-1]
             self._current_stats.update({
-                "gpu_utilization": np.mean([m.gpu_utilization for m in self._batch_metrics]),
-                "memory_utilization": np.mean([m.memory_utilization for m in self._batch_metrics])
+                "gpu_utilization": latest_metrics.gpu_utilization,
+                "memory_utilization": latest_metrics.memory_utilization
             })
 
     def _start_metrics_export(self) -> None:

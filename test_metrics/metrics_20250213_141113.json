@@ -1,0 +1,14 @@
+{
+  "timestamp": 1739477473.8303869,
+  "stats": {
+    "avg_latency": 0.0,
+    "p95_latency": 0.0,
+    "p99_latency": 0.0,
+    "avg_batch_size": 0.0,
+    "throughput": 0.0,
+    "gpu_utilization": 0.0,
+    "memory_utilization": 0.0
+  },
+  "request_traces": [],
+  "batch_metrics": []
+}

@@ -54,6 +54,38 @@
             border-radius: 4px;
             display: none;
         }
+        .result.error {
+            background-color: #ffebee;
+            color: #c62828;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            border: 1px solid #ef9a9a;
+        }
+        .result.positive {
+            background-color: #e8f5e9;
+            color: #2e7d32;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            border: 1px solid #a5d6a7;
+        }
+        .result.negative {
+            background-color: #fbe9e7;
+            color: #d84315;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            border: 1px solid #ffab91;
+        }
+        .result.neutral {
+            background-color: #f5f5f5;
+            color: #616161;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 10px;
+            border: 1px solid #e0e0e0;
+        }
         .positive {
             background: #d4edda;
             color: #155724;
@@ -73,30 +105,29 @@
             background: #f8d7da;
             color: #721c24;
             border: 1px solid #f5c6cb;
-        }
-        .explanation {
-            margin-top: 10px;
-            font-size: 0.9em;
-        }
-        .metrics {
-            margin-top: 10px;
-            font-size: 0.8em;
-            color: #666;
+            padding: 10px;
+            margin: 10px 0;
+            border-radius: 4px;
+            display: block;
         }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Sentiment Analysis</h1>
+        
         <div>
             <textarea id="text" placeholder="Enter text to analyze..."></textarea>
         </div>
+        
         <button onclick="analyzeSentiment()">Analyze Sentiment</button>
+        
         <div class="upload-section">
-            <input type="file" id="fileInput" accept=".pdf,.csv,.txt" style="display: none;">
-            <button onclick="document.getElementById('fileInput').click()">Upload Document</button>
+            <input type="file" id="fileInput" accept=".txt,.pdf,.json" style="display: none;">
+            <button onclick="document.getElementById('fileInput').click()">Choose Files</button>
             <span id="fileName"></span>
         </div>
+        
         <div id="result" class="result"></div>
     </div>
 
@@ -117,7 +148,7 @@
                 resultDiv.className = 'result';
                 resultDiv.innerHTML = 'Analyzing...';
                 
-                const response = await fetch('http://localhost:8000/analyze', {
+                const response = await fetch('/api/analyze', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -130,72 +161,66 @@
                 }
 
                 const result = await response.json();
-                
                 resultDiv.className = `result ${result.prediction.toLowerCase()}`;
                 resultDiv.innerHTML = `
                     <strong>Sentiment:</strong> ${result.prediction}
                     <br>
                     <strong>Confidence:</strong> ${(result.confidence * 100).toFixed(1)}%
-                    <div class="explanation">
-                        ${result.explanation}
-                    </div>
-                    <div class="metrics">
-                        Processing time: ${result.processing_time_ms.toFixed(1)}ms
-                    </div>
                 `;
             } catch (error) {
                 resultDiv.className = 'result error';
                 resultDiv.innerHTML = `Error: ${error.message}`;
             }
         }
-    async function handleFileUpload(event) {
+
+        // File upload handling
+        document.getElementById('fileInput').addEventListener('change', async function(event) {
             const file = event.target.files[0];
             if (!file) return;
             
+            const resultDiv = document.getElementById('result');
+            resultDiv.style.display = 'block';
+            
+            // Validate file type
+            const allowedTypes = ['.txt', '.json'];
+            const fileExt = file.name.substring(file.name.lastIndexOf('.')).toLowerCase();
+            if (!allowedTypes.includes(fileExt)) {
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = `Error: Invalid file type. Allowed types: ${allowedTypes.join(', ')}`;
+                event.target.value = '';
+                return;
+            }
+            
             document.getElementById('fileName').textContent = file.name;
-            document.getElementById('result').style.display = 'block';
-            document.getElementById('result').className = 'result';
-            document.getElementById('result').innerHTML = 'Analyzing file...';
+            resultDiv.className = 'result';
+            resultDiv.innerHTML = 'Analyzing file...';
             
             const formData = new FormData();
             formData.append('file', file);
             
             try {
-                const response = await fetch('http://localhost:8000/api/analyze-file', {
+                const response = await fetch('/api/analyze-file', {
                     method: 'POST',
                     body: formData
                 });
                 
-                let errorMessage = 'Analysis failed';
                 if (!response.ok) {
-                    const errorData = await response.json();
-                    errorMessage = errorData.detail || errorMessage;
-                    throw new Error(errorMessage);
+                    const error = await response.json();
+                    throw new Error(error.detail || 'Analysis failed');
                 }
                 
                 const result = await response.json();
-                document.getElementById('result').className = `result ${result.prediction.toLowerCase()}`;
-                document.getElementById('result').innerHTML = `
+                resultDiv.className = `result ${result.prediction.toLowerCase()}`;
+                resultDiv.innerHTML = `
                     <strong>Sentiment:</strong> ${result.prediction}
                     <br>
                     <strong>Confidence:</strong> ${(result.confidence * 100).toFixed(1)}%
-                    <div class="explanation">
-                        ${result.explanation}
-                    </div>
-                    <div class="metrics">
-                        Processing time: ${result.processing_time_ms.toFixed(1)}ms
-                    </div>
                 `;
             } catch (error) {
-                console.error('File upload error:', error);
-                document.getElementById('result').className = 'result error';
-                document.getElementById('result').innerHTML = `Error: ${error.message}`;
+                resultDiv.className = 'result error';
+                resultDiv.innerHTML = `Error: ${error.message}`;
+                event.target.value = '';
             }
-        }
-        
-        document.addEventListener('DOMContentLoaded', function() {
-            const fileInput = document.getElementById('fileInput');
-            fileInput.addEventListener('change', handleFileUpload);
         });
     </script>
 </body>

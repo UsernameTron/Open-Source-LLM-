@@ -32,8 +32,9 @@ class SentimentRequest(BaseModel):
 async def startup_event():
     global inference_engine
     inference_engine = InferenceEngine(
-        model_path="mock_model",  # Using mock model for testing
-        tokenizer_name=None  # No tokenizer needed for mock
+        config=None,
+        model_path="models/sentiment_model_metal.mlpackage",
+        tokenizer_name="distilbert-base-uncased"
     )
 
 @app.on_event("shutdown")
