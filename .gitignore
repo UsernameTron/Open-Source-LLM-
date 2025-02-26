@@ -1,9 +1,12 @@
-# Python
 __pycache__/
 *.py[cod]
 *$py.class
 *.so
 .Python
+env/
+venv/
+venv_*/
+ENV/
 build/
 develop-eggs/
 dist/
@@ -15,56 +18,48 @@ lib64/
 parts/
 sdist/
 var/
-wheels/
 *.egg-info/
 .installed.cfg
 *.egg
-
-# Virtual Environment
-venv/
-ENV/
-env/
-.env
-.venv/
-
-# IDE
 .idea/
 .vscode/
 *.swp
 *.swo
-
-# Logs and databases
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
 *.log
 *.sqlite
-*.db
+.env
+# Temporary files
+.git/objects/pack/tmp_*
 
-# Test coverage
-.coverage
-htmlcov/
-.tox/
-.nox/
-.coverage.*
-.cache
-nosetests.xml
-coverage.xml
-*.cover
-*.py,cover
+# Keep these commented out as they're now tracked with Git LFS
+# models/*.pth
+# models/retrained/
+# models/enhanced/
+# models/*.onnx
+# models/*.safetensors
+# models/sentiment*/
+# models/tokenizer/
+# models/*/*.dylib
+# models/*/*.so
+# models/*/*.mlpackage/
+# models/*/*/weights/
+# optimization_results/
+# final_model/
+
+wandb/
 .hypothesis/
-
-# Model files (store these separately)
-models/*.mlpackage
-models/*.bin
-models/*.model
-models/weights/
-
-# Benchmark and test results
-benchmark_results/
 test_results/
+benchmark_results/
 evaluation_results/
 inference_results/
-metrics/
 performance_reports/
-
-# Temporary files
-*.tmp
-.DS_Store
+plots/
+results/
+storage/
